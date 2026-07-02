@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "elysia": "^0.8.17"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
