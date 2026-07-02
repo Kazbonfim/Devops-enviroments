@@ -1,20 +1,28 @@
-# Bun Environment
+# Ambiente Bun (Dockerized)
 
-This directory contains a Dockerized environment for a Bun backend and a Vite frontend.
+Este diretório contém um ambiente de desenvolvimento dockerizado pronto para rodar aplicações **Bun** (no backend) e **Vite** (no frontend).
 
-## Services
+## 🚀 Arquitetura e Portas
 
-*   **backend**: A Bun application running on port 3000.
-*   **frontend**: A Vite application served by Nginx on port 8080.
+*   **backend**: Aplicação Bun rodando na porta `3000` (`http://localhost:3000`).
+*   **frontend**: Aplicação Vite (com React/Nginx) exposta na porta `8080` (`http://localhost:8080`).
 
-## Database
+## 💾 Banco de Dados
 
-The backend uses a SQLite database. The database file is located at `data/sqlite.db`.
+*   O backend está configurado para utilizar um banco de dados **SQLite**.
+*   O arquivo do banco de dados é persistido e mapeado no diretório local `data/sqlite.db`.
 
-## Usage
+## ⚙️ Requisitos
 
-*   `make up`: Start the environment in detached mode.
-*   `make down`: Stop the environment.
-*   `make logs`: View the logs of all services.
-*   `make sh-backend`: Access the shell of the backend container.
-*   `make sh-frontend`: Access the shell of the frontend container.
+*   Docker e Docker Compose instalados.
+*   Make (opcional, para utilizar os atalhos do Makefile).
+
+## 🛠️ Automação com Makefile
+
+O projeto inclui um `Makefile` na raiz deste diretório para simplificar o gerenciamento dos containers:
+
+*   `make up`: Sobe o ambiente completo em modo detached (em segundo plano).
+*   `make down`: Para e remove os containers ativos.
+*   `make logs`: Acompanha os logs de todos os serviços em tempo real.
+*   `make sh-backend`: Abre um terminal interativo (`/bin/bash`) dentro do container do backend (Bun).
+*   `make sh-frontend`: Abre um terminal interativo (`/bin/sh`) dentro do container do frontend (Vite).
